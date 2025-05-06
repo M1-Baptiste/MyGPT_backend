@@ -1,5 +1,6 @@
 package com.example.mygpt.domains.user.entities;
 
+
 import jakarta.persistence.*;
 
 @Entity

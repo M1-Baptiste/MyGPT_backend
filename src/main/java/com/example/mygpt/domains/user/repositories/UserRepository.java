@@ -1,5 +1,6 @@
 package com.example.mygpt.domains.user.repositories;
 
+
 import com.example.mygpt.domains.user.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
