@@ -26,6 +26,10 @@ public class Conversation {
         this.createdAt = LocalDateTime.now();
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
