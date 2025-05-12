@@ -40,21 +40,14 @@ public class AuthService {
     }
     
     public LoginResponse login(LoginRequest request) {
-        // Trouver l'utilisateur par email
         User user = userRepository.findByEmail(request.getEmail());
         if (user == null) {
             throw new BadCredentialsException("Invalid email or password");
         }
-        
-        // Vérifier le mot de passe
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new BadCredentialsException("Invalid email or password");
         }
-        
-        // Générer le token JWT
         String token = jwtTokenProvider.generateToken(user.getId(), user.getEmail());
-        
-        // Retourner la réponse
         return new LoginResponse(token, user.getEmail());
     }
 } 

@@ -33,8 +33,6 @@ public class ConversationService {
         this.userRepository = userRepository;
         this.jwtTokenProvider = jwtTokenProvider;
         this.messageService = messageService;
-        // Initialiser quelques conversations pour le développement
-        initializeConversations();
     }
 
     public List<ConversationResponse> getUserConversations(String email) {
@@ -109,31 +107,5 @@ public class ConversationService {
         conversation.setMessages(messageService.getMessagesForConversation(conversationId));
         
         return conversation;
-    }
-
-    private void initializeConversations() {
-        // Cette méthode crée des conversations de test pour le développement
-        try {
-            if (userRepository.count() > 0) {
-                ConversationResponse conv1 = new ConversationResponse();
-                conv1.setId(1L);
-                conv1.setTitle("Introduction à Spring Boot");
-                conv1.setCreatedAt(LocalDateTime.now().minusDays(2));
-                
-                ConversationResponse conv2 = new ConversationResponse();
-                conv2.setId(2L);
-                conv2.setTitle("Résolution de problèmes CORS");
-                conv2.setCreatedAt(LocalDateTime.now().minusDays(1));
-                
-                ConversationResponse conv3 = new ConversationResponse();
-                conv3.setId(3L);
-                conv3.setTitle("Architecture Clean Code");
-                conv3.setCreatedAt(LocalDateTime.now());
-                
-                // Pas besoin d'accéder aux conversations existantes pour ce test
-            }
-        } catch (Exception e) {
-            // Ignorer les erreurs pour le développement
-        }
     }
 } 

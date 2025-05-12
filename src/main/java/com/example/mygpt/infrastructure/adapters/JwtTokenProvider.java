@@ -61,16 +61,11 @@ public class JwtTokenProvider {
                     .build()
                     .parseSignedClaims(token)
                     .getPayload();
-            
-            String email = claims.get("email", String.class);
-            logger.info("Email extrait du token: {}", email);
-            return email;
+
+            return claims.get("email", String.class);
         } catch (ExpiredJwtException e) {
-            logger.warn("Token JWT expiré: {}", e.getMessage());
-            // En mode débogage, on peut extraire l'email même d'un token expiré
             return e.getClaims().get("email", String.class);
         } catch (Exception e) {
-            logger.error("Erreur lors de l'extraction de l'email du token: {}", e.getMessage(), e);
             throw e;
         }
     }
