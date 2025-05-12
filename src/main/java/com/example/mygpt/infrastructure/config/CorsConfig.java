@@ -16,7 +16,7 @@ public class CorsConfig {
 
         // Configuration spécifique pour le frontend
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5174");
+        config.addAllowedOrigin("http://localhost:5173");
         config.addAllowedHeader("Authorization");
         config.addAllowedHeader("Content-Type");
         config.addAllowedHeader("Accept");

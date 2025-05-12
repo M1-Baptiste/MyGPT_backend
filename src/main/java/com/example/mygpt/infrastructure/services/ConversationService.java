@@ -86,7 +86,7 @@ public class ConversationService {
         }
         
         // Générer un lien de partage (ici simplement l'ID, mais vous pourriez implémenter une logique plus complexe)
-        String shareLink = "http://localhost:5174/shared/" + conversationId;
+        String shareLink = "http://localhost:5173/shared/" + conversationId;
         
         return new ShareLinkResponse(shareLink);
     }
