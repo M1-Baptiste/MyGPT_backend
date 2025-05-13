@@ -51,7 +51,6 @@ public class AuthServiceTest {
         user = new User("john.doe@example.com", "encodedPassword");
         user.setId(1L);
 
-        // Explicitly initialize AuthService with mocks
         authService = new AuthService(userRepository, passwordEncoder);
         authService.jwtTokenProvider = jwtTokenProvider;
     }
