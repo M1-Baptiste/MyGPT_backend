@@ -17,6 +17,9 @@ public class ConversationRepositoryTest {
     @Autowired
     private com.example.mygpt.domains.user.repositories.UserRepository userRepository;
 
+    // Ce test vérifie que la conversation peut être sauvegardée dans la base de données
+    // et retrouvée par l'utilisateur associé, en s'assurant que la liste des conversations
+    // n'est pas vide et que le titre de la conversation correspond.
     @Test
     void shouldSaveAndFindConversationByUser() {
         User user = new User("john.doe@example.com", "password123");

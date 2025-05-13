@@ -17,6 +17,8 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+    // Ce test vérifie que l'utilisateur peut être sauvegardé dans la base de données
+    // et retrouvé par son email, en s'assurant que l'email correspond bien.
     @Test
     void shouldSaveAndFindUserByEmail() {
         User user = new User("john.doe@example.com", passwordEncoder.encode("password123"));

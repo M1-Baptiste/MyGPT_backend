@@ -15,6 +15,9 @@ public class DataSourceIntegrationTest {
     @Autowired
     private DataSource dataSource;
 
+    // Ce test vérifie que la connexion à la base de données PostgreSQL est correctement
+    // configurée en s'assurant que le DataSource est initialisé et qu'une requête simple
+    // peut être exécutée avec succès.
     @Test
     void shouldConnectToPostgreSQLDatabase() {
         assertNotNull(dataSource, "DataSource should be initialized");

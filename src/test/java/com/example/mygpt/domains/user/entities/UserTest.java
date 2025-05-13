@@ -12,6 +12,9 @@ public class UserTest {
         this.passwordEncoder = passwordEncoder;
     }
 
+    // Ce test vérifie que la création d'un utilisateur avec des données valides
+    // fonctionne correctement, en s'assurant que l'email et le mot de passe
+    // sont correctement définis.
     @Test
     void shouldCreateUserWithValidData() {
         User user = new User("john.doe@example.com", passwordEncoder.encode("password123"));
@@ -19,6 +22,8 @@ public class UserTest {
         assertEquals("password123", user.getPassword());
     }
 
+    // Ce test vérifie que la création d'un utilisateur avec un email invalide
+    // lève une exception IllegalArgumentException avec le message approprié.
     @Test
     void shouldThrowExceptionForInvalidEmail() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
